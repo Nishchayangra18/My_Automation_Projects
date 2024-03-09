@@ -18,6 +18,8 @@ class PIMPage:
     profile_photo_plus_button_xpath = "//i[@class='oxd-icon bi-plus']"
     save_button_xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']"
     cancel_button_xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--ghost']"
+    Success_toaster_id = "oxd-toaster_1"
+    Sucess_toast_message_xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text']"
 
     def __init__(self, driver):
         self.driver = driver
@@ -31,6 +33,7 @@ class PIMPage:
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
         element = wait.until(EC.visibility_of_element_located((By.XPATH, self.firstname_textbox_xpath)))
         element.send_keys(firstname)
+        return firstname
 
     def entermiddlename(self, middlename):
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
@@ -41,6 +44,7 @@ class PIMPage:
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
         element = wait.until(EC.visibility_of_element_located((By.XPATH, self.lastname_textbox_xpath)))
         element.send_keys(lastname)
+        return lastname
 
     def enteremployeeid(self, employeeid):
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
@@ -74,11 +78,37 @@ class PIMPage:
         element.click()
 
     def clickSavebutton(self):
+        element_to_scroll_to = self.driver.find_element(By.XPATH, self.save_button_xpath)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element_to_scroll_to)
         wait = WebDriverWait(self.driver, 20)
-        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.save_button_xpath)))
+        element = wait.until(EC.visibility_of_element_located((By.XPATH, self.save_button_xpath)))
         element.click()
 
     def clickCancelbutton(self):
         wait = WebDriverWait(self.driver, 20)
         element = wait.until(EC.element_to_be_clickable((By.XPATH, self.cancel_button_xpath)))
         element.click()
+
+    def WaitForSuccessToaster(self):
+        element = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.XPATH, self.Success_toaster_id)))
+        print(element.text)
+
+    def GetTextSuccessToastMessage(self, successmessage):
+        Success = self.driver.find_element(By.XPATH, self.Sucess_toast_message_xpath).text
+        print(Success)
+
+        if successmessage == Success:
+            assert True
+        else:
+            assert False
+
+    def GetTextFullName(self, fullname):
+        firstname = self.driver.find_element(By.XPATH, self.firstname_textbox_xpath).text
+        lastname = self.driver.find_element(By.XPATH, self.lastname_textbox_xpath).text
+        Full_name = firstname + lastname
+        print("Full_name: " + Full_name)
+
+        if fullname == Full_name:
+            assert True
+        else:
+            assert False
