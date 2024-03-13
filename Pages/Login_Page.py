@@ -25,11 +25,13 @@ class LoginPage:
         element.send_keys(password)
 
     def clickLogin(self):
-        self.driver.find_element(By.XPATH, self.button_login_xpath).click()
+        wait = WebDriverWait(self.driver, 20)
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.button_login_xpath)))
+        element.click()
 
     def clickLogout(self):
         wait = WebDriverWait(self.driver, 20)
-        element = wait.until(EC.visibility_of_element_located((By.LINK_TEXT, self.button_logout_linktext)))
+        element = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, self.button_logout_linktext)))
         element.click()
 
     def clickuserdropdown(self):
