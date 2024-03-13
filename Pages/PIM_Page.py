@@ -20,6 +20,12 @@ class PIMPage:
     cancel_button_xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--ghost']"
     Success_toaster_id = "oxd-toaster_1"
     Sucess_toast_message_xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text']"
+    Employee_list_xpath = "//a[contains(text(), 'Employee List')]"
+    Employee_name_xpath = "(//input[@placeholder='Type for hints...'])[1]"
+    Search_button_xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']"
+    Table_row_xpath = "//div[@class='oxd-table-row oxd-table-row--with-border oxd-table-row--clickable']"
+    Table_first_Middle_name_xpath = "(//div[@class='oxd-table-cell oxd-padding-cell'])[3]"
+    Table_Last_name_xpath = "(//div[@class='oxd-table-cell oxd-padding-cell'])[4]"
 
     def __init__(self, driver):
         self.driver = driver
@@ -39,6 +45,7 @@ class PIMPage:
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
         element = wait.until(EC.visibility_of_element_located((By.XPATH, self.middlename_textbox_xpath)))
         element.send_keys(middlename)
+        return middlename
 
     def enterlastname(self, lastname):
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
@@ -109,6 +116,32 @@ class PIMPage:
         print("Full_name: " + Full_name)
 
         if fullname == Full_name:
+            assert True
+        else:
+            assert False
+
+    def clickEmployeeList(self):
+        wait = WebDriverWait(self.driver, 20)
+        element = wait.until(EC.visibility_of_element_located((By.XPATH, self.Employee_list_xpath)))
+        element.click()
+
+    def enterEmployeename(self, employeename):
+        wait = WebDriverWait(self.driver, 20)  # set a max wait time
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Employee_name_xpath)))
+        element.send_keys(employeename)
+
+    def clickSearchbutton(self):
+        wait = WebDriverWait(self.driver, 20)
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Search_button_xpath)))
+        element.click()
+
+    def verifyEmployeenameTable(self, Employeename):
+        Employee_first_name = self.driver.find_element(By.XPATH, self.Table_first_Middle_name_xpath).text
+        Employee_last_name = self.driver.find_element(By.XPATH, self.Table_Last_name_xpath).text
+        Employee_name = Employee_first_name + " " + Employee_last_name
+        print("Employee_name" + Employee_name)
+
+        if Employeename == Employee_name:
             assert True
         else:
             assert False

@@ -69,10 +69,10 @@ class Test_002_Add_Employee:
                     data.append(cell_data)
 
                 processRowData(data)
-                # self.pp.enterfirstname(data[0])
-                self.pp.entermiddlename(data[1])
-                # self.pp.enterlastname(data[2])
-                self.fullname = self.pp.enterfirstname(data[0]) + self.pp.enterlastname(data[2])
+                # print(self.pp.enterfirstname(data[0]))
+                # print(self.pp.entermiddlename(data[1]))
+                # print(self.pp.enterlastname(data[2]))
+                self.fullname = self.pp.enterfirstname(data[0]) + " " + self.pp.entermiddlename(data[1]) + " " + self.pp.enterlastname(data[2])
                 print("fullname: " + self.fullname)
                 self.pp.enteremployeeid(data[3])
                 self.pp.clickCreateLoginSlideButton()
@@ -99,20 +99,33 @@ class Test_002_Add_Employee:
                     print(f"An error occurred: {e}")
 
                 self.pp.clickSavebutton()
-                try:
-                    self.pp.WaitForSuccessToaster()
-                    self.pp.GetTextSuccessToastMessage("Success")
-                except Exception as e:
-                    print(f"An error occurred: {e}")
+                time.sleep(5)
+                # self.dp.clickPIM()
+                self.pp.clickEmployeeList()
+                time.sleep(5)
+                self.pp.enterEmployeename(self.fullname)
+                self.pp.clickSearchbutton()
 
-                try:
-                    WebDriverWait(self.driver, 10).until(
-                        EC.url_changes("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList")
-                    )
-                except Exception as e:
-                    print(f"An error occurred: {e}")
-                self.pp.GetTextFullName(self.fullname)
-                time.sleep(3)
+                time.sleep(2)
+                self.pp.verifyEmployeenameTable(self.fullname)
+                # self.pp.enterEmployeename(self.fullname)
+                # self.pp.clickSearchbutton()
+                # self.pp.verifyEmployeenameTable(self.fullname)
+
+                # try:
+                #     self.pp.WaitForSuccessToaster()
+                #     self.pp.GetTextSuccessToastMessage("Success")
+                # except Exception as e:
+                #     print(f"An error occurred: {e}")
+                #
+                # try:
+                #     WebDriverWait(self.driver, 10).until(
+                #         EC.url_changes("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList")
+                #     )
+                # except Exception as e:
+                #     print(f"An error occurred: {e}")
+                # self.pp.GetTextFullName(self.fullname)
+                # time.sleep(3)
 
 
         self.logger.info("********************** End of Login Test  ************************")
