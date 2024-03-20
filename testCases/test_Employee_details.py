@@ -9,6 +9,7 @@ from utilities import XLUtils
 from Pages.Dashboard_Page import DashboardPage
 from Pages.PIM_Page import PIMPage
 from pynput.keyboard import Key, Controller
+from Pages.Employee_Details_page import EmployeeDetailsPage
 
 
 def processRowData(data):
@@ -17,15 +18,15 @@ def processRowData(data):
         print(f"Column {index + 1}: {value}")
 
 
-class Test_002_Add_Employee:
+class Test_003_Add_Employee_Details:
     path = ".//testData/OrangeHRM_Testdata.xlsx"
     logger = LogGen.loggen()
 
     @pytest.mark.sanity
     @pytest.mark.regression
     def test_Login_ddt(self, Setup):
-        self.logger.info("********************** Test_002_Add_Employee  ************************")
-        self.logger.info("********************** Verifying Add Employee Test  ************************")
+        self.logger.info("********************** Test_003_Add_Employee_Details  ************************")
+        self.logger.info("********************** Verifying Add Employee Details Test  ************************")
         self.driver = Setup
         self.driver.maximize_window()
         self.lp = LoginPage(self.driver)
@@ -101,6 +102,37 @@ class Test_002_Add_Employee:
 
                 time.sleep(2)
                 self.pp.verifyEmployeenameTable(self.fullname)
+                self.pp.clickEmployeeTable()
+                time.sleep(5)
 
-        self.logger.info("********************** End of Add Employee Test  ************************")
-        self.logger.info("********************** Completed Test_002_Add_Employee ************************")
+                self.ed = EmployeeDetailsPage(self.driver)
+
+                self.rows_add_employee_details = XLUtils.getRowCount(self.path, 'Employee_Details')
+                self.columns_add_employee_details = XLUtils.getColumnCount(self.path, 'Employee_Details')
+
+                for r in range(2, self.rows_add_employee_details + 1):
+                    data = []
+                    for c in range(1, self.columns_add_employee_details + 1):
+                        cell_data = XLUtils.readData(self.path, 'Employee_Details', r, c)
+                        data.append(cell_data)
+
+                    processRowData(data)
+
+                    self.ed.enter_other_id(data[0])
+                    self.ed.enter_driving_lic(data[1])
+                    self.ed.enter_Lic_expiry_date_picker(data[2], data[4], data[5])
+                    time.sleep(8)
+                    self.ed.select_Nationality_dropdown_values(data[3])
+                    self.ed.select_Marital_Status_dropdown_values(data[6])
+                    self.ed.enter_DOB_date_picker(data[7], data[8], data[9])
+                    time.sleep(3)
+                    self.ed.select_Gender_radio_button(data[10])
+                    self.ed.click_Personal_details_Save_button()
+                    time.sleep(2)
+                    self.ed.select_Blood_Type_dropdown_values(data[11])
+                    self.ed.enter_test_field(data[12])
+                    self.ed.click_Custom_Fields_Save_button()
+
+
+        self.logger.info("********************** End of Add Employee Details Test  ************************")
+        self.logger.info("********************** Completed Test_003_Add_Employee_Details ************************")
