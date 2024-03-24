@@ -145,3 +145,8 @@ class PIMPage:
             assert True
         else:
             assert False
+
+    def clickEmployeeTable(self):
+        wait = WebDriverWait(self.driver, 20)
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Table_first_Middle_name_xpath)))
+        element.click()
