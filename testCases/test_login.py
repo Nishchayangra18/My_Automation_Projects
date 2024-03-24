@@ -19,6 +19,7 @@ class Test_001_Login:
 
     @pytest.mark.sanity
     @pytest.mark.regression
+    @pytest.fixture
     def test_Login_ddt(self, Setup):
         self.logger.info("********************** Test_001_Login  ************************")
         self.logger.info("********************** Verifying Login Test  ************************")
