@@ -7,9 +7,12 @@
     <list default="true" id="54555bbd-62d0-4277-bb85-e0999de98169" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/automation.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/automation.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/PIM_Page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/PIM_Page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Employee_Details_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Employee_Details_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reports/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/test_Add_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_Add_employee.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/test_Employee_details.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testData/OrangeHRM_Testdata.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testData/OrangeHRM_Testdata.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

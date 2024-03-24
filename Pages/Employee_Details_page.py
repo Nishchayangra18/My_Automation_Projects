@@ -1,6 +1,7 @@
 import time
 
 from selenium import webdriver
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -36,6 +37,12 @@ class EmployeeDetailsPage:
     Test_field_Textbox_xpath = "(//input[@class='oxd-input oxd-input--active'])[7]"
     Custom_Fields_Save_button_xpath = ("(//button[@class='oxd-button oxd-button--medium oxd-button--secondary "
                                        "orangehrm-left-space'])[2]")
+    Toast_Message_Xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text']"
+    Custom_fields_Attachment_Add_button_xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--text']"
+    Browse_Personal_Details_Attachment_button_xpath = "//div[@class='oxd-file-button']"
+    Custom_fields_Attachment_Comment_area_xpath = "//textarea[@placeholder='Type comment here']"
+    Custom_Fields_Attachment_Save_button_xpath = ("(//button[@class='oxd-button oxd-button--medium "
+                                                  "oxd-button--secondary orangehrm-left-space'])[3]")
 
     def __init__(self, driver):
         self.driver = driver
@@ -186,4 +193,41 @@ class EmployeeDetailsPage:
     def click_Custom_Fields_Save_button(self):
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
         element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Custom_Fields_Save_button_xpath)))
+        element.click()
+
+    def verify_Toast_Message(self, success):
+        try:
+            toast_message = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located((By.XPATH, self.Toast_Message_Xpath))
+            )
+
+            # Once the toast message appears, capture its text
+            toast_text = toast_message.text
+
+            if success == toast_text:
+                assert True
+            else:
+                assert False
+
+        except TimeoutException:
+            print("Toast message not found within specified timeout period")
+
+    def click_Custom_Add_Attachment_button(self):
+        wait = WebDriverWait(self.driver, 20)  # set a max wait time
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Custom_fields_Attachment_Add_button_xpath)))
+        element.click()
+
+    def click_Custom_Browse_Attachment_button(self):
+        wait = WebDriverWait(self.driver, 20)  # set a max wait time
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Browse_Personal_Details_Attachment_button_xpath)))
+        element.click()
+
+    def enter_Personal_Details_comment(self, comment):
+        wait = WebDriverWait(self.driver, 20)  # set a max wait time
+        element = wait.until(EC.visibility_of_element_located((By.XPATH, self.Custom_fields_Attachment_Comment_area_xpath)))
+        element.send_keys(comment)
+
+    def click_Custom_Fields_Attachment_Save_button(self):
+        wait = WebDriverWait(self.driver, 20)  # set a max wait time
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Custom_Fields_Attachment_Save_button_xpath)))
         element.click()
