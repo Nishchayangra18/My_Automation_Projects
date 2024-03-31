@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54555bbd-62d0-4277-bb85-e0999de98169" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/OrangeHRM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OrangeHRM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/automation.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/automation.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Employee_Details_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Employee_Details_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Employee_Details_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Employee_Personal_Details_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reports/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/test_Add_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_Add_employee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/test_Employee_details.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testData/OrangeHRM_Testdata.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testData/OrangeHRM_Testdata.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +42,14 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_Add_employee.Test_002_Add_Employee.test_Add_Employee.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test_Add_employee.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.pytest for test_Add_employee.Test_002_Add_Employee.test_Personal_Details.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;OrangeHRM&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/My_Automation_Work&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/My_Automation_Work&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -56,6 +58,46 @@
       <recent name="C:\Users\User\PycharmProjects\OrangeHRM\testCases" />
       <recent name="C:\Users\User\PycharmProjects\OrangeHRM\utilities" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest for test_Add_employee.Test_002_Add_Employee.test_Personal_Details">
+    <configuration name="Python tests for test_Add_employee.Test_002_Add_Employee.test_Add_Employee" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="OrangeHRM" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_Add_employee.Test_002_Add_Employee.test_Add_Employee&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_Add_employee.Test_002_Add_Employee.test_Personal_Details" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="OrangeHRM" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_Add_employee.Test_002_Add_Employee.test_Personal_Details&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_Add_employee.Test_002_Add_Employee.test_Personal_Details" />
+        <item itemvalue="Python tests.Python tests for test_Add_employee.Test_002_Add_Employee.test_Add_Employee" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

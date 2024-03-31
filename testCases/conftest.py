@@ -8,7 +8,7 @@ from Pages.Login_Page import LoginPage
 from utilities import XLUtils
 
 
-@pytest.fixture
+@pytest.fixture(scope="class")
 def Setup(browser):
     if browser == 'chrome':
         driver = webdriver.Chrome()
@@ -25,7 +25,7 @@ def pytest_addoption(parser):  # This will get the value from CLI/Hooks
     parser.addoption("--browser")
 
 
-@pytest.fixture
+@pytest.fixture(scope="class")
 def browser(request):  # This will return the browser value to setup method
     return request.config.getoption("--browser")
 
@@ -52,7 +52,7 @@ def processRowData(data):
         print(f"Column {index + 1}: {value}")
 
 
-@pytest.fixture
+@pytest.fixture(scope="class")
 def test_Login_ddt(Setup):
     path = ".//testData/OrangeHRM_Testdata.xlsx"
     driver = Setup
@@ -79,5 +79,3 @@ def test_Login_ddt(Setup):
         lp.enterPassword(data[2])
         lp.clickLogin()
         time.sleep(5)
-
-

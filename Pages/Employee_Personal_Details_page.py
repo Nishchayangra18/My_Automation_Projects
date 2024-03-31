@@ -1,3 +1,4 @@
+import os
 import time
 
 from selenium import webdriver
@@ -43,6 +44,9 @@ class EmployeeDetailsPage:
     Custom_fields_Attachment_Comment_area_xpath = "//textarea[@placeholder='Type comment here']"
     Custom_Fields_Attachment_Save_button_xpath = ("(//button[@class='oxd-button oxd-button--medium "
                                                   "oxd-button--secondary orangehrm-left-space'])[3]")
+    Custom_Fields_Attachment_row_xpath = "(//div[@class='oxd-table-cell oxd-padding-cell'])[2]"
+    Custom_Fields_Attachment_download_button_xpath = ("(//button[@class='oxd-icon-button "
+                                                      "oxd-table-cell-action-space'])[3]")
 
     def __init__(self, driver):
         self.driver = driver
@@ -219,15 +223,32 @@ class EmployeeDetailsPage:
 
     def click_Custom_Browse_Attachment_button(self):
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
-        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Browse_Personal_Details_Attachment_button_xpath)))
+        element = wait.until(
+            EC.element_to_be_clickable((By.XPATH, self.Browse_Personal_Details_Attachment_button_xpath)))
         element.click()
 
     def enter_Personal_Details_comment(self, comment):
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
-        element = wait.until(EC.visibility_of_element_located((By.XPATH, self.Custom_fields_Attachment_Comment_area_xpath)))
+        element = wait.until(
+            EC.visibility_of_element_located((By.XPATH, self.Custom_fields_Attachment_Comment_area_xpath)))
         element.send_keys(comment)
 
     def click_Custom_Fields_Attachment_Save_button(self):
         wait = WebDriverWait(self.driver, 20)  # set a max wait time
         element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Custom_Fields_Attachment_Save_button_xpath)))
         element.click()
+
+    def verify_added_custom_field_Attachment(self, aatachmentname):
+        wait = WebDriverWait(self.driver, 20)  # set a max wait time
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, self.Custom_Fields_Attachment_row_xpath)))
+        file_name = element.text
+        wait = WebDriverWait(self.driver, 20)  # set a max wait time
+        download_button = wait.until(
+            EC.element_to_be_clickable((By.XPATH, self.Custom_Fields_Attachment_download_button_xpath)))
+
+        if aatachmentname == file_name:
+            download_button.click()
+            time.sleep(5)
+            assert True
+        else:
+            assert False
