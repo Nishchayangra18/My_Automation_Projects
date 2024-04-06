@@ -12,6 +12,7 @@ from Pages.Dashboard_Page import DashboardPage
 from Pages.PIM_Page import PIMPage
 from pynput.keyboard import Key, Controller
 from Pages.Employee_Contact_Details_page import EmployeeContactDetailsPage
+from Pages.Employee_Emergency_Contacts_page import EmergencyContactsPage
 
 
 def processRowData(data):
@@ -221,3 +222,82 @@ class Test_002_Add_Employee:
             self.ecd.verify_added_Attachment(self.dp_jpg_name, "No Records Found")
 
         self.logger.info("********************** End of test_Contact_Details Test ************************")
+
+    @pytest.mark.sanity
+    @pytest.mark.regression
+    def test_Emergency_Contact(self, Setup, test_Login_ddt):
+        self.logger.info("********************** Verifying test_Emergency_Contact Test  ************************")
+        self.driver = Setup
+        self.emergency_contact = EmergencyContactsPage(self.driver)
+        self.driver.execute_script("window.scrollTo(0, 0);")
+
+        self.emergency_contact.click_Emergency_Contact_Tile()
+        self.emergency_contact.click_Emergency_Contact_Add_Button()
+
+        self.rows_emergency_Contacts = XLUtils.getRowCount(self.path, 'Emergency_Contacts')
+        self.columns_emergency_Contacts = XLUtils.getColumnCount(self.path, 'Emergency_Contacts')
+
+        for r in range(2, self.rows_emergency_Contacts + 1):
+            data = []
+            for c in range(1, self.columns_emergency_Contacts + 1):
+                cell_data = XLUtils.readData(self.path, 'Emergency_Contacts', r, c)
+                data.append(cell_data)
+
+            processRowData(data)
+
+            self.emergency_contact.enter_Name(data[0])
+            self.emergency_contact.enter_Relationship(data[1])
+            self.emergency_contact.enter_Home_Telephone(data[2])
+            self.emergency_contact.enter_Mobile(data[3])
+            self.emergency_contact.enter_Work_Telephone(data[4])
+            self.emergency_contact.click_Emergency_Contact_Save_button()
+            self.emergency_contact.verify_added_Emergency_Contact(data[0])
+            time.sleep(3)
+            self.emergency_contact.verify_Toast_Message("Success")
+            time.sleep(2)
+            self.emergency_contact.click_Attachment_Add_button()
+            self.emergency_contact.click_Attachment_Browse_button()
+            self.Directory_path = os.path.dirname(os.path.realpath(".//testData/Test_dp_upload.jpg"))
+            self.slash = "\\"
+            self.dp_jpg_name = os.path.basename("testData/Test_dp_upload.jpg")
+            self.dp_jpg_path = self.Directory_path + self.slash + self.dp_jpg_name
+            time.sleep(5)
+            try:
+                keyword = Controller()
+                keyword.type(self.dp_jpg_path)
+                keyword.press(Key.enter)
+                keyword.release(Key.enter)
+                time.sleep(5)
+            except Exception as e:
+                print(f"An error occurred: {e}")
+            self.emergency_contact.enter_Attachment_Comment(data[5])
+            self.emergency_contact.click_Attachment_Save_button()
+            self.emergency_contact.verify_Toast_Message("Success")
+            time.sleep(3)
+
+            self.emergency_contact.verify_added_Attachment(self.dp_jpg_name)
+            time.sleep(3)
+
+            self.emergency_contact.click_Attachment_Browse_button()
+            self.Directory_path = os.path.dirname(os.path.realpath(".//testData/Test_Edit_Dp_Upload.jpg"))
+            self.slash = "\\"
+            self.edit_dp_jpg_name = os.path.basename("testData/Test_Edit_Dp_Upload.jpg")
+            self.edit_dp_jpg_path = self.Directory_path + self.slash + self.edit_dp_jpg_name
+            time.sleep(5)
+            try:
+                keyword = Controller()
+                keyword.type(self.edit_dp_jpg_path)
+                keyword.press(Key.enter)
+                keyword.release(Key.enter)
+                time.sleep(5)
+            except Exception as e:
+                print(f"An error occurred: {e}")
+            self.emergency_contact.enter_Attachment_Comment(data[6])
+            self.emergency_contact.click_Attachment_Save_button()
+            self.emergency_contact.verify_Toast_Message("Success")
+            time.sleep(3)
+
+            self.emergency_contact.verify_edit_added_Attachment(self.edit_dp_jpg_name)
+
+        self.logger.info("********************** End of test_Emergency_Contact Test ************************")
+
