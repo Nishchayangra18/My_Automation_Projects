@@ -37,18 +37,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_Add_employee.Test_002_Add_Employee.test_Add_Employee.executor": "Run",
-    "Python tests.Python tests in test_Add_employee.py.executor": "Debug",
-    "Python tests.pytest for test_Add_employee.Test_002_Add_Employee.test_Personal_Details.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "OrangeHRM",
-    "last_opened_file_path": "D:/My_Automation_Work/Pages",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_Add_employee.Test_002_Add_Employee.test_Add_Employee.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_Add_employee.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.pytest for test_Add_employee.Test_002_Add_Employee.test_Personal_Details.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;OrangeHRM&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/My_Automation_Work/Pages&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\My_Automation_Work\Pages" />
