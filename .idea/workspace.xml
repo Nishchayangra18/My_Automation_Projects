@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54555bbd-62d0-4277-bb85-e0999de98169" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/API_Automation/API_Validation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/automation.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/automation.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/Reports/report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,7 @@
     "Python tests.Python tests for test_Add_employee.Test_002_Add_Employee.test_Add_Employee.executor": "Run",
     "Python tests.Python tests in test_Add_employee.py.executor": "Debug",
     "Python tests.pytest for test_Add_employee.Test_002_Add_Employee.test_Personal_Details.executor": "Run",
+    "Python.API_Validation.executor": "Run",
     "Python.json_Parsing.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -57,7 +57,7 @@
       <recent name="C:\Users\User\PycharmProjects\OrangeHRM\utilities" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.json_Parsing">
+  <component name="RunManager">
     <configuration name="json_Parsing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OrangeHRM" />
       <option name="ENV_FILES" value="" />
