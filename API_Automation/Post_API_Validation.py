@@ -22,3 +22,11 @@ response_deleteBook = requests.post(Delete_url, json=
 assert response_deleteBook.status_code == 200
 delete_response_json = response_deleteBook.json()
 assert delete_response_json['msg'] == "book is successfully deleted"
+
+# Authentication
+se = requests.session()    #Creates a session
+se.auth = auth=('rahulshettyacademy', getPassword())
+
+url = "https://api.github.com/user"
+github_response = se.get(url)
+print(github_response.status_code)

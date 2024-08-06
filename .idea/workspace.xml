@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54555bbd-62d0-4277-bb85-e0999de98169" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/API_Automation/PayLoad.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API_Automation/Post_API_Validation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API_Automation/Utilities/Configurations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API_Automation/Utilities/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API_Automation/Utilities/properties.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API_Automation/Utilities/resources.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API_Automation/Miscellanous.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API_Automation/API_Validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_Automation/API_Validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API_Automation/Post_API_Validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_Automation/Post_API_Validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API_Automation/Utilities/Configurations.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_Automation/Utilities/Configurations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +43,7 @@
     "Python tests.Python tests in test_Add_employee.py.executor": "Debug",
     "Python tests.pytest for test_Add_employee.Test_002_Add_Employee.test_Personal_Details.executor": "Run",
     "Python.API_Validation.executor": "Run",
+    "Python.Miscellanous.executor": "Run",
     "Python.Post_API_Validation.executor": "Run",
     "Python.json_Parsing.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
