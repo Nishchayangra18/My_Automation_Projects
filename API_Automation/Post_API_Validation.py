@@ -6,7 +6,8 @@ from Utilities.resources import API_resources
 
 Post_url = Get_Config()['API']['endpoint']+API_resources.add_Book
 headers = {"Content-Type": "application/json"}
-addBook_response = requests.post(Post_url, json=Add_Book_Payload("jqwert"), headers=headers, )
+query = "select * from Books"
+addBook_response = requests.post(Post_url, json=Build_Payload_From_DB(query), headers=headers, )
 
 print(addBook_response.json())
 response_json = addBook_response.json()
