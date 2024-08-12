@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54555bbd-62d0-4277-bb85-e0999de98169" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/API_Automation/Db_Demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API_Automation/features/BookAPI.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API_Automation/features/steps/stepImplementation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API_Automation/PayLoad.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_Automation/PayLoad.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API_Automation/Post_API_Validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_Automation/Post_API_Validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API_Automation/Utilities/Configurations.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_Automation/Utilities/Configurations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API_Automation/Utilities/properties.ini" beforeDir="false" afterPath="$PROJECT_DIR$/API_Automation/Utilities/properties.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "RestAssured__API",
     "last_opened_file_path": "D:/My_Automation_Work/Pages",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -64,7 +61,7 @@
       <recent name="C:\Users\User\PycharmProjects\OrangeHRM\utilities" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.json_Parsing">
     <configuration name="json_Parsing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OrangeHRM" />
       <option name="ENV_FILES" value="" />
